@@ -1,38 +1,158 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Cabin|Oxanium|Raleway&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Oxanium";
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Raleway";
+}
+main {
+  height: 100vh;
+  width: auto;
+  background: url(https://images.pexels.com/photos/707582/pexels-photo-707582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.container {
+  margin: 0 100px;
+  width: 60%;
+}
+.form-section {
+  padding-top: 100px;
+}
+.form__input {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  margin: 5px;
+  cursor: pointer;
+
+  transition: all 0.2s linear;
+}
+input[type="submit"]:hover {
+  background-color: rgb(131, 128, 128);
+  color: rgb(255, 255, 255);
+}
+.countdown-section {
+  margin-top: 10px;
+  background-color: rgba(245, 245, 220, 0.561);
+  padding: 0 10px;
+  height: fit-content;
+  overflow-y: auto;
+}
+.event__header {
+  display: flex;
+  padding-left: 60px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.event {
+  padding: 0 5px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+.event:hover {
+  background-color: rgba(128, 128, 128, 0.205);
+}
+.event:hover .event__icon {
+  color: rgba(22, 22, 22, 0.514);
+}
+.event__item {
   text-align: center;
+  width: 33.3333%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.event__item:nth-child(2) {
+  padding-left: 10px;
+  text-align: start;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.event__item:last-child {
+  text-align: end;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.event__iconbox {
+  display: flex;
+  width: auto;
+}
+.event__icon {
+  margin: 0 5px;
+  color: transparent;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.event__icon:hover:first-child {
+  transform: scale(1.2);
+  color: black;
+}
+.event__icon:hover:nth-child(2) {
+  transform: scale(1.2);
+  color: rgb(179, 17, 17);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(22, 20, 20, 0.568);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(179, 176, 176);
+}
+.modal__inner form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.timeLeft {
+  display: inline-block;
+  padding: 3px 5px;
+  margin: 3px;
   color: white;
+  border-radius: 3px;
+  background-color: rgba(255, 0, 0, 0.52);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 1023px) {
+  .container {
+    margin: 0;
+    padding-left: 10px;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .countdown-section {
+    margin-top: 20px;
+    background-color: rgba(245, 245, 220, 0.829);
+  }
+}
+@media (max-width: 500px) {
+  .form-section {
+    padding: 10px;
+  }
+  .form-section form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
