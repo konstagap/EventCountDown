@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import LogIn from "./LogIn";
 
 export default function NavBar() {
+  const [login, setLogin] = useState("signup");
   return (
-    <NavWrapper>
-      <div className="login">
-        <FontAwesomeIcon icon={faUser} size="1x" className="userIcon" />
-        <span>Login</span> or <span>Sign up</span>
-      </div>
-    </NavWrapper>
+    <>
+      <NavWrapper>
+        <div className="login">
+          <FontAwesomeIcon icon={faUser} size="1x" className="userIcon" />
+          <ul className="nav__submenu">
+            <li className="nav__submenu-item ">
+              <a onClick={() => setLogin("login")}>Login</a>
+            </li>
+            <li className="nav__submenu-item ">
+              <a onClick={() => setLogin("signup")}>Sign up</a>
+            </li>
+          </ul>
+          {/* <span>Login</span> or <span>Sign up</span> */}
+        </div>
+      </NavWrapper>
+      {login && <LogIn login={login} setLogin={setLogin} />}
+    </>
   );
 }
 
@@ -31,6 +44,29 @@ const NavWrapper = styled.nav`
     color: grey;
     &:hover {
       color: black;
+    }
+  }
+  .login {
+  }
+  .login:hover .nav__submenu {
+    height: 60px;
+  }
+  .nav__submenu {
+    margin: 5px 0;
+    list-style: none;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s linear;
+  }
+  .nav__submenu-item {
+    padding: 5px;
+  }
+  .nav__submenu-item a{
+    color: grey;
+    cursor:pointer;
+    &:hover{
+      color black;
     }
   }
 `;
