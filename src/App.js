@@ -13,20 +13,20 @@ import Modal from "./components/Modal";
 let inputs = [
   {
     id: 1,
-    name: "New Year",
-    date: "3/2/2023, 1:23:31 PM",
+    name: "New Year 2021",
+    date: "1/1/2021, 1:23:31 PM",
     timeover: false
   },
   {
     id: 3,
-    name: "New 2",
-    date: "3/2/2024, 1:23:31 PM",
+    name: "Champions League Final",
+    date: "5/30/2020, 9:00:31 PM",
     timeover: false
   },
   {
     id: 2,
-    name: "New 3",
-    date: "3/2/2025, 1:23:31 PM",
+    name: "Trip to Key West",
+    date: "9/2/2020, 1:23:31 PM",
     timeover: false
   }
 ];
