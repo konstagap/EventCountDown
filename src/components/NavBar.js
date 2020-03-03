@@ -5,7 +5,8 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import LogIn from "./LogIn";
 
 export default function NavBar() {
-  const [login, setLogin] = useState("signup");
+  const [login, setLogin] = useState("");
+
   return (
     <>
       <NavWrapper>
@@ -19,7 +20,6 @@ export default function NavBar() {
               <a onClick={() => setLogin("signup")}>Sign up</a>
             </li>
           </ul>
-          {/* <span>Login</span> or <span>Sign up</span> */}
         </div>
       </NavWrapper>
       {login && <LogIn login={login} setLogin={setLogin} />}
